@@ -1,0 +1,3 @@
+Polymorphism : The makeVoice() method is called for all objects in the array, but the actual method executed depends on the runtime type of the object (Cow, Dog, etc.).
+Abstraction: The Animal class defines a common interface (makeVoice()), and specific animal classes implement it with their unique behavior.
+Code Reusability: The hear() method works with any number of animal objects without needing to know their specific types.
