@@ -1,0 +1,21 @@
+//Docker Commands.
+
+1.docker pull hello-world
+2.docker run hello-world
+3.docker run-it ubuntu
+4.exit
+5.docker stop <id>
+
+Docker network-
+
+Let 2 containers talk without haole[mongo,mongo-express]
+1.docker network ls
+2.docker network create mongo-network
+3.docker network ls
+4.docker run -d -p 27017:27017 --name mongo--network mongo -network -e MONGO_INITDB_ROOT_USERNAME__ADMIN -e MONGO_INITDB_ROOT_PASSWORD=admin mango
+5.docker network inspect mongo-network // to see which containers are connected to mongo-network.
+
+Running mong-express containers on isolated network mongo-network-
+
+1.docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME = admin -e ME_CONFIG_MONGODB_ADMINPASSWORD = admin -e ME_CONFIG_MONGODB_URL = "mongodb://admin : admin @ mongo : 2 7017" mongo-express.
+//mongo-express is an admin interface to connect to the mongodb database.
